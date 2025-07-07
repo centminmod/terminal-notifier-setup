@@ -66,7 +66,7 @@ The setup configures a **Stop** event hook in `~/.claude/settings.json`:
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound default"
+            "command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10"
           }
         ]
       }
@@ -88,7 +88,7 @@ This hook:
 Edit `~/.claude/settings.json` and modify the `sound` parameter:
 
 ```json
-"command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound Glass"
+"command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound Glass -timeout 10"
 ```
 
 **Available sounds**: default, Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink
@@ -98,7 +98,7 @@ Edit `~/.claude/settings.json` and modify the `sound` parameter:
 Customize the title, subtitle, and message:
 
 ```json
-"command": "terminal-notifier -title \"🤖 Claude\" -subtitle \"Task Done\" -message \"Completed work in $(basename \"$PWD\")\" -sound Glass"
+"command": "terminal-notifier -title \"🤖 Claude\" -subtitle \"Task Done\" -message \"Completed work in $(basename \"$PWD\")\" -sound Glass -timeout 10"
 ```
 
 ### Add Notification Timeout
@@ -106,7 +106,7 @@ Customize the title, subtitle, and message:
 Make notifications disappear after a specific time:
 
 ```json
-"command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 5"
+"command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10"
 ```
 
 ## 🎯 Per-Project Notifications
@@ -125,7 +125,7 @@ cat > .claude/settings.json << 'EOF'
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title \"My Project\" -subtitle \"Build Complete\" -message \"Finished working on $(basename \"$PWD\")\" -sound Glass"
+            "command": "terminal-notifier -title \"My Project\" -subtitle \"Build Complete\" -message \"Finished working on $(basename \"$PWD\")\" -sound Glass -timeout 10"
           }
         ]
       }
@@ -152,7 +152,7 @@ You can set up hooks for different Claude Code events:
         "hooks": [
           {
             "type": "command",
-            "command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound default"
+            "command": "terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10"
           }
         ]
       }
@@ -179,7 +179,7 @@ Use shell conditionals for smarter notifications:
 ```json
 {
   "type": "command",
-  "command": "if [ -f package.json ]; then terminal-notifier -title \"Node.js Project\" -message \"Claude finished working on $(basename \"$PWD\")\" -sound Glass; else terminal-notifier -title \"Claude Code\" -message \"Finished working in $(basename \"$PWD\")\" -sound default; fi"
+  "command": "if [ -f package.json ]; then terminal-notifier -title \"Node.js Project\" -message \"Claude finished working on $(basename \"$PWD\")\" -sound Glass -timeout 10; else terminal-notifier -title \"Claude Code\" -message \"Finished working in $(basename \"$PWD\")\" -sound default -timeout 10; fi"
 }
 ```
 

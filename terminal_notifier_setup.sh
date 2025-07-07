@@ -67,7 +67,7 @@ settings['hooks']['Stop'] = [
         'hooks': [
             {
                 'type': 'command',
-                'command': 'terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in \$(basename \"\$PWD\")\" -sound default'
+                'command': 'terminal-notifier -title \"Claude Code\" -subtitle \"Session Complete\" -message \"Finished working in \$(basename \"\$PWD\")\" -sound default -timeout 10'
             }
         ]
     }

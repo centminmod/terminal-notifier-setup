@@ -31,7 +31,7 @@ This setup configures **Claude Code hooks** to send native macOS notifications w
 
 1. **Clone this repository**:
    ```bash
-   git clone https://github.com/your-username/terminal-notifier-setup.git
+   git clone https://github.com/centminmod/terminal-notifier-setup.git
    cd terminal-notifier-setup
    ```
 

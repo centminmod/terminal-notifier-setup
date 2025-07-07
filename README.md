@@ -10,6 +10,8 @@ Get macOS desktop notifications when Claude Code finishes working using the offi
 
 This setup configures **Claude Code hooks** to send native macOS notifications when Claude Code completes any task. No wrapper scripts, no complexity—just proper integration with Claude Code's official hooks system.
 
+~[Claude Code hooks with terminal-notifier](/screenshots/macos-terminal-notifier-claudecode.png)
+
 ### ✨ Features
 
 - 🔔 **Native macOS notifications** when Claude Code stops
